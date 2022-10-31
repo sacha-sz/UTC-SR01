@@ -1,8 +1,9 @@
 # UTC-SR01
 
-Contient les codes de TD et de devoir de l'UV SR01 de l'Université de Technologie de Compiègne.
+Contient les codes de TD et de devoir de l'UV SR01 de l'Université de Technologie de Compiègne. 
+Tous les TD et devoirs sont réalisés en C.
 
-## Arborescence
+## :card_index_dividers: - Arborescence du projet
 
 ```
 .
@@ -72,6 +73,19 @@ Contient les codes de TD et de devoir de l'UV SR01 de l'Université de Technolog
     ├── Partie-2
     .   └...
     └── Partie-3
-        └...
-  
+     └...
 ```
+## :technologist: - Langage utilisé
+- C
+
+## :memo: - Licence
+
+[MIT](LICENSE)
+
+## :notebook_with_decorative_cover: - Auteurs et contributeurs
+
+-   **sacha-sz** - Tous les TD et DM - [sacha-sz](https://github.com/sacha-sz/)
+-  **4igle**  - Collaboration sur les DM - [4igle](https://github.com/4igle/)
+
+## :bookmark_tabs: - Références
+- **Lien moodle vers le cours** : [UTC-SR01](https://moodle.utc.fr/course/view.php?name=SR01)
