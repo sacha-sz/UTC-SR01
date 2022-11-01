@@ -3,6 +3,10 @@
 Contient les codes de TD et de devoir de l'UV SR01 de l'Université de Technologie de Compiègne. 
 Tous les TD et devoirs sont réalisés en C.
 
+Afin d'ouvrir les sujets, il faut les ouvrir sur un navigateur web.
+En effet, les sujets sont au format html.
+
+
 ## :card_index_dividers: - Arborescence du projet
 
 ```
@@ -32,6 +36,7 @@ Tous les TD et devoirs sont réalisés en C.
 └── TD
     ├── Partie-1
     .   ├── TD1
+    .   .   ├── Sujet-TD1.html
     .   .   ├── ex1a.c
     .   .   ├── ex1b.c
     .   .   ├── ex2.c
@@ -40,6 +45,7 @@ Tous les TD et devoirs sont réalisés en C.
     .   .   ├── pgcd.c
     .   .   └── TD1-notes
     .   ├── TD2
+    .   .   ├── Sujet-TD2.html
     .   .   ├── ex2.c
     .   .   ├── ex2.h
     .   .   ├── ex4.c
@@ -48,6 +54,7 @@ Tous les TD et devoirs sont réalisés en C.
     .   .   ├── ex5.h
     .   .   └── main.c
     .   ├── TD3
+    .   .   ├── Sujet-TD3.html
     .   .   ├── ex1a.c
     .   .   ├── ex1b.c
     .   .   ├── ex2.c
@@ -55,6 +62,7 @@ Tous les TD et devoirs sont réalisés en C.
     .   .   ├── ex3b.c
     .   .   └── ex4.c
     .   ├── TD4
+    .   .   ├── Sujet-TD4.html
     .   .   ├── main.c
     .   .   ├── ex1.c
     .   .   ├── ex2a.c
@@ -64,6 +72,7 @@ Tous les TD et devoirs sont réalisés en C.
     .   .   ├── ex4.c
     .   .   └── ex5.c
     .   ├── TD5
+    .   .   ├── Sujet-TD5.html
     .   .   ├── EX1.c
     .   .   ├── main.c
     .   .   ├── main_ex2.c

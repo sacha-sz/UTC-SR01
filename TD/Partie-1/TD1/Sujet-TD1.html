@@ -1,0 +1,525 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html data-lt-installed="true" class=" lndixgpeh idc0_341"><head>
+
+    <title>SR01: td1</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="GENERATOR" content="Mozilla/3.04Gold (X11; I; SunOS 5.7 sun4u) [Netscape]">
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+
+
+<center><table width="800" align="left">
+
+    <tbody><tr>
+
+        <td width="78">
+
+            <center><p><img src="sujet_files/logo_utc_new.jpg" width="180" height="60" align="MIDDLE"></p></center>
+
+        </td>
+
+
+
+        <td>
+
+            <center><p><b><font size="+3"><font color="#006699">SR01 - TD 1</font></font></b></p></center>
+
+            <center><p><b><font size="+3"><font color="#006699">C et Unix : Introduction</font></font></b></p></center>
+
+        </td>
+
+    </tr>
+
+    </tbody></table></center>
+
+
+
+
+
+
+
+<p>
+
+</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<hr width="800" align="left">
+
+<div align="center"><strong><font color="006699">
+
+    <p></p>
+
+    <font size="+1">Environnement de travail sous Linux</font>  </font>
+
+</strong>
+
+</div>
+
+<ul>
+
+    <li><strong><font color="006699">Editeur de text</font></strong><font color="006699">e</font> </li>
+
+</ul>
+
+<p>Vous pouvez utiliser l'un des éditeurs de texte disponibles : <font color="#CC6600">gedit</font>, <font color="#CC6600">Nedit</font>, <font color="#CC6600">kwrite</font>, <font color="#CC6600">emacs</font>, <font color="#CC6600">xemacs</font>, <font color="#CC6600">kdevelop:c/c++</font>, <br>
+
+    Ces éditeurs disposent de la coloration syntaxique.</p>
+
+<p>
+
+    pour kwrite: Tools-&gt;highlighting-&gt;sources-&gt;C<br>
+    pour kdevelop: Tools-&gt;highlighting-&gt;sources-&gt;C et  Tools-&gt;Indentation-&gt;C style<br>
+</p><p>Pour éditer un fichier, par exemple avec l'éditeur "kwrite" : <br>
+
+    <tt>kwrite &amp;</tt>
+
+    ou <tt>kwrite nom-de-fichier &amp;</tt> </p>
+
+<ul>
+
+    <li><strong><font color="#006699">Fichier noms.txt</font></strong> </li>
+
+</ul>
+
+<p>Créer dans votre "home directory" (cd ou cd ~) un fichier
+
+    qui s'appelle <b><font color="#CC6600">noms.txt</font> </b>et qui contient les noms <br>
+
+    des 2 membres du binome de TD sous le format suivant: </p>
+
+<pre>Jean-Jacques.Dupond@etu.utc.fr&nbsp;
+
+Alain.Durand@etu.utc.fr</pre>
+
+<!--!<P>Ce fichier sera utilis&eacute; par un programme automatique de validation
+de vos TDs. S'il est absent ou erron&eacute;, tant pis pour vous. </P>
+-->
+<ul>
+
+    <li><b><font color="006699">Création du dossier td1</font></b></li>
+
+</ul>
+
+<p> Créer un répertoire "<font color="#CC6600">td1</font>" dans lequel
+
+    on va travailler : </p>
+
+<p><tt>mkdir td1<br>
+
+    cd td1</tt>    </p>
+
+<ul>
+
+    <li><strong><font color="006699">terminal : xterm, konsole </font></strong></li>
+
+</ul>
+
+<p>&nbsp;Lancer une fenêtre "terminal" ou plusieurs si
+
+    nécessaire : </p>
+
+<p><tt>xterm &amp; ou konsole&amp; <br>
+</tt></p>
+<ul>
+
+    <li><b><font color="006699">Apprentissage de l'utilisation de base du shell </font></b></li>
+
+</ul>
+
+<p>Créer des fichiers vides avec la commande <font color="#CC6600">touch</font></p>
+
+<pre> &gt; touch aaa aab aac   abb abc acd bcd </pre>
+
+<p>à l'aide de ces fichiers apprenez à manipuler les commandes
+
+    de base de gestion de fichiers :&nbsp; <b><i><font color="#CC6600">cp, rm, mv, cd, mkdir, rmdir... </font></i></b></p>
+
+Structure des répertoires :  &nbsp; Chemin absolu, chemin relatif ,<tt>&nbsp; / . .. ~ ~username</tt>
+
+<p>Utiliser <i><font color="#CC6600">chmod</font> </i>pour donner des permissions différentes
+
+    à chacun de ces fichiers <br>
+
+    <br>
+
+    Apprenez à utiliser les commandes du shell d'édition de la
+
+    ligne de commande : </p>
+
+<blockquote>
+
+    <p>flèches du clavier<br>
+
+        [^D] : Choix possibles (de fichiers ou de commandes)<br>
+
+        [TAB] : "Completion" automatique si choix (ou tant que choix)
+
+        unique<br>
+
+        * et ?: "Expansion" des "Jockers" </p>
+
+</blockquote>
+
+<ul>
+
+    <li> <font color="006699"><strong>Utilisation du man </strong></font></li>
+
+</ul>
+
+<p>man "commande"<br>
+    <br>
+
+</p>
+
+<ul>
+
+    <li><strong><font color="#006699">Les processus</font></strong>   </li>
+
+</ul>
+
+liste des processus : commande <font color="#CC6600">ps</font> (voir man ps)
+
+<pre>ps -u sr01xxx
+
+</pre>
+<p>gestion des processus:   Arrêt, Avant plan, Arrière
+
+    plan<br>
+
+    <tt>  apprenez la différence entre "gedit
+
+        fichier &lt;return&gt;"</tt><tt>&nbsp; et  "gedit fichier <strong>&amp;</strong>&lt;return&gt;"</tt></p>
+
+
+<ul>
+
+    <li><strong><font color="#006699">Création d'arborescence</font></strong>   </li>
+
+    A partir du répertoire racine (celui qui est à la base de l'arborescence ; il s'agit ici de ~),
+    créez l'arborescence suivante :
+    <img src="sujet_files/im.PNG" width="50%" height="20%">.
+
+
+</ul>
+
+<ul>
+
+    <li><strong><font color="#006699">Visualisation de fichiers</font></strong>   </li>
+
+    Lister tous les fichiers :
+
+    <dd> - se terminant par '2023'</dd><dd>
+</dd><dd>- commençant par 'UTC'</dd>
+    <dd>- commençant par 'UTC' et de 4 lettres maximum</dd>
+    <dd>- contenant la chaine 'Monde'</dd>
+    <dd>- commençant par 'a' ou 'A</dd>
+
+</ul>
+
+
+<p><!--Informations sur le syst&egrave;me et les utilisateurs: <BR>
+  <TT>&nbsp;&nbsp;&nbsp; uname -a</TT> <TT>&nbsp; ,  w&nbsp;&nbsp;, &nbsp;
+  who&nbsp;&nbsp;, whoami&nbsp;&nbsp;,&nbsp; id&nbsp;, .... <BR> -->
+
+</p>
+
+<p>
+
+</p><hr width="800" align="left">
+
+<div align="center">
+
+    <h6><b><font size="+1" color="006699">Les premiers programmes C</font></b>
+
+    </h6>
+
+</div>
+
+<p>Ce TD est à réaliser dans le répertoire td1. <br>
+
+    &nbsp; </p>
+
+
+
+<ul>
+
+    <li><strong><font color="006699">hello1.c</font></strong></li>
+
+</ul>
+
+<p>Avec gedit , créer un fichier "<font color="#CC6600">hello1.c</font>"&nbsp;<br>
+
+    contenant le programme C suivant :</p>
+
+<table nosave="" halign="RIGHT" width="60%" border="1">
+
+    <tbody><tr nosave="">
+
+        <td bordercolor="#999999" nosave="">
+
+<pre><i>/* hello1.c*/
+
+#include &lt;stdio.h&gt;
+
+
+
+main ()
+
+{
+
+
+
+printf("hello world!");
+
+printf("bye world!");
+
+
+
+return 0;
+
+
+
+}</i></pre></td>
+
+    </tr>
+
+    </tbody></table>
+
+
+
+Compiler ce code avec :  <pre><font color="#CC6600">gcc -o hello1 hello1.c</font></pre>
+
+Lancer le programme  <font color="#CC6600">hello1</font>
+
+<p>faire une nouvelle version de votre programme <font color="#CC6600">(hello2.c</font>) en ajoutant
+
+    le caractère '\n' à la fin de chaque phrase.<br>
+
+    recompiler et executer hello2.c</p>
+
+
+
+<ul>
+
+    <li><font color="006699"><b>Code ascii: ex1a.c</b></font></li>
+
+</ul>
+
+<p>copier , compiler et executer le programme <font color="#CC6600">ex1a.c </font>suivant:</p>
+
+
+
+<table nosave="" halign="RIGHT" width="60%" border="1">
+
+    <tbody><tr nosave="">
+
+        <td bordercolor="#999999" nosave="">
+
+      <pre>/* ex1a.c*/
+
+#include &lt;stdio.h&gt;</pre>      <pre>main ()
+
+   {
+
+   int i;
+
+   for (i=48 ; i&lt;=57 ; i++)
+
+   printf("|%3d | %c | \n",i,i);
+
+   for (i=97 ; i&lt;=122 ; i++)
+
+   printf("|%3d | %c | \n",i,i);
+
+   return 0;
+
+   }</pre>    </td>
+
+    </tr>
+
+    </tbody></table>
+
+<p>faire une nouvelle version du programme ex1a.c (<font color="#CC6600">ex1b.c</font>) pour completer
+
+    le resultat avec les codes ascii
+
+    des lettres majuscules A--Z</p>
+
+
+
+<li><b><font color="006699">Lecture de données: ex2.c</font> </b> </li>
+
+
+
+<p>Avec gedit, créer un fichier "<font color="#CC6600">ex2.c</font>"&nbsp;
+
+    contenant le programme C suivant :</p>
+
+
+
+<table nosave="" halign="RIGHT" width="60%" bordercolor="#999999" border="1">
+
+    <tbody><tr nosave="">
+
+        <td bordercolor="#666666" nosave="">
+
+<pre> /* ex2.c  */
+
+#include &lt;stdio.h&gt;
+
+main ()
+
+{
+
+&nbsp; int i1=6 ,i2, somme ;
+
+/* -- */
+
+&nbsp; printf ("i2 ?=");
+
+&nbsp; scanf ("%d",&amp;i2);
+
+&nbsp; somme = i1 + i2 ;
+
+&nbsp; printf(" Somme : %d\n",somme);
+
+}</pre></td>
+
+    </tr>
+
+    </tbody></table>
+
+
+
+<p>Le compiler avec : <font color="#CC6600">gcc -o ex2 ex2.c</font> </p>
+
+<p>Enlever le "&amp;" devant
+
+    le "i2" de la ligne "scanf ("%d",&amp;i2);"
+
+    ,
+
+    Recompiler et exécuter <br>
+
+</p>
+
+
+
+<!--Faire un &quot;ls -l core&quot; : regarder la taille du fichier core. <BR>
+D&eacute;truire le fichier core (il faut <B>toujours</B> d&eacute;truire
+les &quot;core&quot; qui trainent). <BR>
+&nbsp; </P>
+</UL>
+-->
+
+<p>
+
+</p><ul>
+
+    <li><strong><font color="006699">pgcd.c</font></strong>
+
+        <p></p>
+
+    </li>
+
+</ul>
+
+<p>copier , compiler et executer le programme <font color="#CC6600">pgcd.c</font> suivant:</p>
+
+
+
+<table nosave="" halign="RIGHT" width="60%" bordercolor="#999999" border="1">
+
+    <tbody><tr nosave="">
+
+        <td bordercolor="#666666" nosave=""><pre>/* pgcd.c calcul du pgcd de 2 nombres:*/</pre>      <pre>#include &lt;stdio.h&gt;</pre>      <pre>int pgcd(int x, int y) { </pre>      <ul>
+
+        <pre>int reste;
+
+     do {
+
+     reste= x % y;
+
+     if (reste == 0) break;
+
+     x = y;
+
+     y = reste;
+
+     } while (1); return (y); </pre>
+
+            <pre>}</pre>
+
+        </ul>
+
+            <pre>int main () { </pre>      <ul>
+
+                <pre>int a, b; </pre>
+
+                <pre>printf("\n donner a et b -&gt;: ");
+
+     scanf("%d %d", &amp;a, &amp;b);
+
+
+
+     if (b&gt;a) {
+
+     int c = a;
+
+     a = b;
+
+     b = c; }
+
+
+
+     printf(" Leur PGCD est : %d\n\n", pgcd(a,b));</pre>
+
+            </ul>
+
+            <pre>}</pre>    </td>
+
+    </tr>
+
+    </tbody></table>
+
+<p>&nbsp;</p>
+
+<p><b><u><font color="#CC6600">Programmes à créer dans ce TD1</font></u><font color="#CC6600"> :&nbsp; hello1.c
+
+    , hello2.c , ex1a.c, ex1b.c, ex2.c, pgcd.c </font></b></p>
+
+
+
+<p>&nbsp;</p>
+
+
+
+<div align="right">
+
+  <pre><b><i><font color="#333333"><font size="-1">-- SR01 A2023, H. LAKHLEF</font></font></i></b> &nbsp;    <p></p>
+
+</pre>
+
+</div>
+
+<div align="right"></div>
+
+
+
+
+
+</body></html>
