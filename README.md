@@ -94,7 +94,7 @@ En effet, les sujets sont au format html.
 ## :notebook_with_decorative_cover: - Auteurs et contributeurs
 
 -   **sacha-sz** - Tous les TD et DM - [sacha-sz](https://github.com/sacha-sz/)
--  **4igle**  - Collaboration sur les DM - [4igle](https://github.com/4igle/)
+-  **Th3o-D**  - Collaboration sur les DM - [Th3o-D](https://github.com/Th3o-D/)
 
 ## :bookmark_tabs: - Références
-- **Lien moodle vers le cours** : [UTC-SR01](https://moodle.utc.fr/course/view.php?name=SR01)
+- **Lien moodle vers le cours**, (nécessite d'être connecté pour y accéder): [UTC-SR01](https://moodle.utc.fr/course/view.php?name=SR01)
