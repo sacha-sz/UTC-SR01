@@ -145,7 +145,7 @@ int jeu_humain (int nb_allum, int prise_max)
 
     while (prise>nb_allum || prise<1 || prise_max-prise<0) {
         printf("\nVous ne pouvez pas tirer %d allumettes",prise);
-        printf("\nLe nombre d'allumettes doit etre compris entre 1 et %d et le nombre d'allumettes doit restantes doit etre positif",prise_max);
+        printf("\nLe nombre d'allumettes doit etre compris entre 1 et %d et le nombre d'allumettes restantes doit etre positif",prise_max);
         printf("\nCombien d'allumettes voulez-vous tirer? ");
         scanf("%d",&prise);
     }
