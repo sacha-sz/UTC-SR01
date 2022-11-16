@@ -93,7 +93,7 @@ Les premiers sujets étant au format html.
     .       └── teststring.
     ├── Partie-2
     .   ├── TD7
-    .   .   ├── Sujet-TD7.md
+    .   .   ├── Sujet-TD7.html
     .   └...
     └── Partie-3
      └...
