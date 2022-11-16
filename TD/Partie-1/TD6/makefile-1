@@ -1,0 +1,17 @@
+myapplication : teststring.o mystrchrn.o mystrinv.o mystrshow.o
+	gcc -o myapplication teststring.o mystrchrn.o mystrinv.o mystrshow.o
+
+teststring.o : teststring.c mystrchrn.h mystrinv.h mystrshow.h
+	gcc -c teststring.c
+
+mystrchrn.o : mystrchrn.h
+	gcc -c mystrchrn.c
+
+mystrinv.o : mystrinv.h
+	gcc -c mystrinv.c
+
+mystrshow.o : mystrshow.h
+	gcc -c mystrshow.c
+
+clean :
+	rm -f myapplication *.o

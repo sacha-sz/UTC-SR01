@@ -1,0 +1,20 @@
+OBJS = teststring.o mystrchrn.o mystrinv.o mystrshow.o
+HEADERS = mystrchrn.h mystrinv.h mystrshow.h
+
+myapplication : $(OBJS)
+	gcc -o myapplication $(OBJS)
+
+teststring.o : teststring.c $(HEADERS)
+	gcc -c teststring.c
+
+mystrchrn.o : mystrchrn.h
+	gcc -c mystrchrn.c
+
+mystrinv.o : mystrinv.h
+	gcc -c mystrinv.c
+
+mystrshow.o : mystrshow.h
+	gcc -c mystrshow.c
+
+clean:
+	rm –rf *.o

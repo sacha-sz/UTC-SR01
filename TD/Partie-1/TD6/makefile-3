@@ -1,0 +1,13 @@
+OBJ = mystrinv.o mystrchrn.o mystrshow.o teststring.o mystrupdown.o
+HEADER  = mystrshow.h mystrchrn.h mystrinv.h
+
+resultat: $(OBJ) $(HEADER)
+	gcc -o $(OBJ)
+
+%.o: %.c
+	gcc -c $^
+
+.PHONY : clean
+
+clean:
+	rm –rf *.o

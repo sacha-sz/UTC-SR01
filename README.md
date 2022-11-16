@@ -1,10 +1,10 @@
 # UTC-SR01
 
-Contient les codes de TD et de devoir de l'UV SR01 de l'Université de Technologie de Compiègne. 
+Contient les codes de TD et de devoir de l'UV SR01 de l'Université de Technologie de Compiègne.
 Tous les TD et devoirs sont réalisés en C.
 
 Afin d'ouvrir les sujets, il faut les ouvrir sur un navigateur web.
-En effet, les sujets sont au format html.
+Les premiers sujets étant au format html.
 
 
 ## :card_index_dividers: - Arborescence du projet
@@ -22,7 +22,7 @@ En effet, les sujets sont au format html.
 .   .   .   ├── EX1-prog2.c
 .   .   .   ├── EX1-prog3.c
 .   .   .   ├── EX1-prog4.c
-.   .   .   ├── EX1-prog5.c 
+.   .   .   ├── EX1-prog5.c
 .   .   .   └── EX1-prog6.c
 .   .   ├── EX2
 .   .   .   ├── main.c
@@ -78,6 +78,19 @@ En effet, les sujets sont au format html.
     .   .   ├── main_ex2.c
     .   .   ├── mystr.c
     .   .   └── mystr.h
+    .   ├── TD6
+    .   .   ├── Sujet-TD6.md
+    .   .   ├── makefile
+    .   .   ├── makefile-1
+    .   .   ├── makefile-2
+    .   .   ├── makefile-3
+    .   .   ├── mystrchrn.c
+    .   .   ├── mystrchrn.h
+    .   .   ├── mystrinv.c
+    .   .   ├── mystrinv.h
+    .   .   ├── mystrshow.c
+    .   .   ├── mystrshow.h
+    .   .   └── teststring.c
     .   └...
     ├── Partie-2
     .   └...
