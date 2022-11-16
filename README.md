@@ -78,21 +78,22 @@ Les premiers sujets étant au format html.
     .   .   ├── main_ex2.c
     .   .   ├── mystr.c
     .   .   └── mystr.h
-    .   ├── TD6
-    .   .   ├── Sujet-TD6.md
-    .   .   ├── makefile
-    .   .   ├── makefile-1
-    .   .   ├── makefile-2
-    .   .   ├── makefile-3
-    .   .   ├── mystrchrn.c
-    .   .   ├── mystrchrn.h
-    .   .   ├── mystrinv.c
-    .   .   ├── mystrinv.h
-    .   .   ├── mystrshow.c
-    .   .   ├── mystrshow.h
-    .   .   └── teststring.c
-    .   └...
+    .   └── TD6
+    .       ├── Sujet-TD6.md
+    .       ├── makefile
+    .       ├── makefile-1
+    .       ├── makefile-2
+    .       ├── makefile-3
+    .       ├── mystrchrn.c
+    .       ├── mystrchrn.h
+    .       ├── mystrinv.c
+    .       ├── mystrinv.h
+    .       ├── mystrshow.c
+    .       ├── mystrshow.h
+    .       └── teststring.
     ├── Partie-2
+    .   ├── TD7
+    .   .   ├── Sujet-TD7.md
     .   └...
     └── Partie-3
      └...

@@ -1,0 +1,192 @@
+<head>
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+  <meta content="Mozilla/4.03 [en] (WinNT; I) [Netscape]" name="GENERATOR">
+  <title>SR01 - td7</title>
+  </head><body bgcolor="#FFffff"><x-sas-window right="766" left="4" bottom="476" top="1"></x-sas-window><x-sas-remotesave file="td0.html" dir="" user="lo03" server="www4.utc.fr"></x-sas-remotesave>
+
+
+&nbsp;
+<table width="800">
+  <tbody><tr>
+  <td width="78">  <p align="center"><img src="logo_utc_new.jpg" width="180" height="60" align="MIDDLE"></p></td>
+
+<td>  <p align="center"><b><font size="+3"><font color="#006699">SR01 - TD 7 </font></font></b></p>  <p align="center"><b><font size="+3"><font color="#006699">Premiers appels système </font></font></b></p></td>
+  </tr>
+</tbody></table>
+<p>
+</p>
+<p></p>
+<blockquote></blockquote>
+<!--___________________________________________________________________ -->
+<hr width="800" align="left">
+<font color="006699"><strong>Exercice1: getpid( ) et getppid( ) </strong></font>
+<br>
+  <p>Créer un programme C, qui utilise les appels système <font color="#CC6600">getpid()</font> et <font color="#CC6600">getppid()</font>. ajouter ensuite les appels getuid(), getgid(), ...</p>
+
+<font size="4" color="006699">Exercice2: E/S bas niveau</font>
+<i><font size="4" color="#CC6600"> [STDIN_FILENO, STDOUT_FILENO, /dev/tty,dup(), dup2(), table des descripteurs ]</font></i>
+      <br>
+       <b>cp ~sr01/td/closep.c  .</b><br>
+      Examiner le source, le compiler et l'exécuter.<br>
+      Ajouter des lignes (<b>sans en supprimer</b>) pour que le
+      dernier  <b>printf()</b> (le 4<sup>ème</sup>) se fasse bien à
+      l'écran.<br>
+
+      Vous réaliserez ce travail <b>deux fois</b> en utilisant
+      deux méthodes différentes :
+
+      <ul>
+         <li>avec <b>open()</b>  -&gt; <b>closep1.c</b></li>
+
+         <li>avec <b>dup()</b>   -&gt; <b>closep2.c</b><br>
+         <br>
+
+	</li></ul>
+
+
+<hr width="800" align="left">
+
+
+<font color="006699"><strong>Exercice3: L'espace virtuel d'un process </strong></font>
+
+
+  <p> &nbsp;
+Sur une machine à mémoire virtuelle paginée la
+mémoire est vue par les programmes comme un grand tableau
+linéaire. </p>
+<p>Attention : ce tableau comporte en général des TROUS :
+des portions de l'espace virtuel NE SONT PAS DéFINIS. <br>Tout
+accès dans ces portions se traduit sur Unix par un "segmentation
+fault" suivi en général par la génération
+d'un "core". </p>
+<p><tt>Organisation en mémoire d'un programme :</tt> <br>
+<tt>--------------------------------------</tt>
+<table width="77%" border="0">
+  <tbody>
+    <tr>
+      <td width="20%" valign="top">
+      <pre>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>main(), ...<br>&nbsp;<br>int j=<font color="#ff0000">5</font>;<br>&nbsp;<br>&nbsp;<br>static int <font color="#ff0000">i</font>;<br>&nbsp;<br><font color="#ff0000">malloc()<br></font>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br><font color="#ff0000">v</font>=a(<font color="#ff0000">i</font>,<font color="#ff0000">j</font>,<font color="#ff0000">k</font>)<br>Adresses de retour<br>&nbsp;<br>&nbsp;<br>Environnement<br>(partie utilisateur<br>&nbsp;du PCB)<br>&nbsp;</pre>
+      </td>
+      <td width="29%">
+      <center>
+      <pre>/----------\<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>|<font color="#ff8040">--</font><font color="#ff8000">-----</font><font color="#ff8040">---</font>|<br><font color="#ff8000">|&nbsp;&nbsp; TEXT&nbsp;&nbsp; |<br>|----------|<br>|&nbsp;&nbsp; DATA&nbsp;&nbsp; |<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>|- - - - - |<br>|&nbsp;&nbsp; BSS&nbsp;&nbsp;&nbsp; |<br></font>|<font color="#ff8000">----------</font>|<br>|&nbsp;&nbsp; HEAP&nbsp;&nbsp; |<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>|----------|<br>|&nbsp;&nbsp;&nbsp; ||&nbsp;&nbsp;&nbsp; |<br>|&nbsp;&nbsp;&nbsp; \/&nbsp;&nbsp;&nbsp; |<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>|&nbsp;&nbsp;&nbsp; /\&nbsp;&nbsp;&nbsp; |<br>|&nbsp;&nbsp;&nbsp; ||&nbsp;&nbsp;&nbsp; |<br>|----------|<br>|&nbsp; STACK&nbsp;&nbsp; |<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>|----------|<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>|&nbsp; U_AREA&nbsp; |<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |<br>\----------/</pre>
+      </center>
+      </td>
+      <td width="51%" valign="top">
+      <pre>&nbsp;<br>&nbsp;<br>&nbsp;<br><font color="#ff8000">*<br></font>aussi appelé CODE<br>&nbsp;<br>Y sont aussi stockées les<br>chaines de caract. de printf, ...<br>&nbsp;<br>(Block Started by Symbol, Terme du<br>langage assembleur de l'IBM 7090)<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>l'espacee entre les limites<br>n'est pas défini<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>int <font color="#ff0000">i</font>; int <font color="#ff0000">j</font>=5;</pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+�<font color="#ff8000">* Les trois sections en couleur orange sont
+celles qui composent un programme exécutable sur disque. Elles
+sont générées par les phases <br>
+successives de
+compilation puis Edition de liens (link). Elles sont chargées
+dans l'espace virtuel d'un process lorsqu'on exécute le
+programme. <br>
+Ceci est illustré par l'exemple ci-dessous :</font> </p>
+<blockquote>
+  <ul>
+    <li> Ecrire le programme C suivant :</li>
+    <br>
+&nbsp; <br>
+    <tt>#include &lt;stdio.h&gt;</tt><br>
+    <tt>main()</tt><br>
+    <tt>{</tt><br>
+    <tt>printf("Bonjour a tous !\n");</tt><br>
+    <tt>}</tt><br>
+&nbsp; <br>
+&nbsp; <li> Le compiler avec le compilateur "<font color="#CC6600">cc</font>" (le compilateur C
+standard du système). <i>Il ne faut pas utiliser le compilateur
+"domaine public gcc" pour illustrer cet exemple. <br>
+En effet, "gcc"
+réalise une optimisation du code généré qui
+place dans la partie .TEXT certaines constantes simples, au lieu de les
+placer dans .DATA.</i></li>
+    <br>
+&nbsp; <li> Visualiser le contenu du programme "hello" obtenu avec la
+commande <tt>objdump</tt> :</li>
+    <ul>
+      <li> <tt><font color="#CC6600">objdump -h hello</font></tt> pour connaître les adresses
+des différentes sections (.TEXT, .DATA, .BSS).</li>
+      <li> <tt><font color="#CC6600">objdump -s hello</font> <font color="#CC6600">| more</font></tt> pour visualiser le contenu
+des sections.</li>
+      <li> <tt><font color="#CC6600">objdump -d hello | more</font></tt> pour "désassembler"
+le contenu de la section .TEXT et visualiser les instructions qui la
+composent.</li>
+      <br>
+&nbsp;
+      <p>Dans quelle section est située la chaine "<tt>Bonjour a
+tous !</tt>" ? <br>
+&nbsp; &nbsp; <br>
+      </p>
+    </ul>
+  </ul>
+  <ul>
+<li>
+Utiliser la commande size (<font color="#CC6600">size -A</font>) pour visualiser les tailles des diff�rentes sections
+</li>
+
+</ul>
+
+</blockquote>
+<hr width="800" align="left">
+<p>&nbsp;</p>
+<br>
+<font color="006699"><strong>Variables d'environnement </strong></font>
+
+
+    <ul>
+      <tt>&nbsp; </tt><tt> Variables d'environnement et du shell : référencées par $nom</tt> <br>
+          <tt>&nbsp; voir la liste des variables : echo $[^D]</tt> <br>
+          <tt>&nbsp; Voir le contenu d'une variable : echo $nom</tt>
+          <p><tt>&nbsp; Variables "shell"</tt> <br>
+              <tt>&nbsp;- Noms en minuscule par convention</tt> <br>
+              <tt>&nbsp;- N'existent QUE SOUS le shell</tt> <br>
+              <tt>&nbsp;- Etablir : "set var=val", détruire : "unset var"</tt> </p>
+          <p><tt>&nbsp; Variable d'environnement</tt> <br>
+              <tt>&nbsp;- Noms en majuscules par convention</tt> <br>
+              <tt>&nbsp;- Font partie du process</tt> <br>
+              <tt>&nbsp;- Sont héritées par les process fils créés par un process père</tt> <br>
+              <tt>&nbsp; (==&gt; récupérables dans les programmes)</tt> <br>
+              <tt>&nbsp;- Cas de DISPLAY (test) et de PATH (att. aux noms de vos exec !)</tt> <br>
+              <tt>&nbsp;- Etablir : "setenv VAR val", détruire : "unsetenv VAR"</tt> <br>
+              <tt>&nbsp;- Voir l'environnement : "printenv"</tt> </p>
+    </ul>
+
+   <br><br>
+
+<font color="006699"><strong>Exercice4:  Les arguments de la ligne de commande Unix </strong></font>
+<br>
+
+
+  Ecrire un programme qui affiche le nombre et la liste des variables d'environnement;
+  <ul>
+  <li>"<b><font color="#CC6600">arg1.c</font></b>" : qui utilise l'argumnt envp de la fonction main()</li>
+  <li>"<b><font color="#CC6600">arg2.c</font></b>" : qui utilise la variable globale <b></b>environ</li>
+
+  </ul>
+<br>
+<font color="006699"><strong>Exercice5: getenv() putenv() </strong></font>
+<br>
+
+  <p>Créer dans le shell une variable d'environnement (par exemple "<font color="#CC6600">SR01TD8</font>") ayant pour valeur "<font color="#CC6600">Un_exemple_de_variable</font>". </p>
+  <p>écrire un programme "<b>env1.c"</b> qui va successivement : </p>
+  <ul>
+    <li>demander le nom de la variable � l'utilisateur</li>
+      <li>lire la valeur de cette variable à l'aide de la fonction système <a><font color="#CC6600">getenv()</font></a> ,</li>
+      <li> modifier cette variable par <a><font color="#CC6600">putenv()</font></a><b>,</b> en lui donnant la valeur "<font color="#CC6600">Un_exemple_de_variable_modifiee</font>" ,</li>
+      <li>lire à nouveau la valeur de la variable à l'aide de la fonction système <a><font color="#CC6600">getenv()</font></a>.</li>
+  </ul>
+  <p><br>
+à la sortie du programme on vérifiera dans le shell la valeur de la variable.</p>
+
+<!--___________________________________________________________________ -->
+<hr width="800" align="left">
+<ul>
+</ul>
+<!--___________________________________________________________________ -->
+
+
+</body>
