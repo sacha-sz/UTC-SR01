@@ -32,7 +32,44 @@ Les premiers sujets étant au format html.
 .   .       ├── main.c
 .   .       ├── EX3.c
 .   .       └── EX3.h
-.   └...
+.   └── DM2
+.       ├── Rapport-DM2.pdf
+.       ├── Sujet-DM2.pdf
+.       ├── EX1
+.       .   └── Prog1.c
+.       ├── EX2
+.       .   └── devoir-2-a-22-sr-01
+.       .       ├── decoupage_module
+.       .       .       ├── explorer.c
+.       .       .       ├── explorer.h
+.       .       .       ├── main.c
+.       .       .       ├── Makefile.mak
+.       .       .       ├── MakefileOpt.mak
+.       .       .       ├── my_system.c
+.       .       .       ├── my_system.h
+.       .       .       ├── nbr_premiers.txt
+.       .       .       ├── premier.c
+.       .       .       └── premier.h
+.       .       ├── nbr_premiers.txt
+.       .       ├── Prog_premiers.c
+.       .       ├── Prog_premiers_m1.c
+.       .       ├── Prog_premiers_m2.c
+.       .       ├── Prog_premiers_m3.c
+.       .       └── README.md
+.       └── EX3
+.       .       ├── ApplicationManager.c
+.       .       ├── get_time.c
+.       .       ├── list_appli.txt
+.       .       ├── mise_en_veille.txt
+.       .       ├── network_manager.c
+.       .       └── power_manager.c
+.       └── ressources_initiales_fournies
+.               ├── get_time.c
+.               ├── list_appli.txt
+.               ├── mise_en_veille.txt
+.               ├── network_manager.c
+.               ├── power_manager.c
+.               └── time_manager.c
 └── TD
     ├── Partie-1
     .   ├── TD1
@@ -93,10 +130,51 @@ Les premiers sujets étant au format html.
     .       └── teststring.
     ├── Partie-2
     .   ├── TD7
+    .   .   ├── closep.c
+    .   .   ├── closep1.c
+    .   .   ├── closep2.c
+    .   .   ├── ex1.c
+    .   .   ├── EX3.c
+    .   .   ├── EX4-arg1.c
+    .   .   ├── EX4-arg2.c
+    .   .   ├── EX5-code
+    .   .   ├── EX5.c 
+    .   .   ├── HELLO-code
     .   .   ├── Sujet-TD7.html
-    .   └...
+    .   .   └── toto.txt
+    .   ├── TD8
+    .   .   ├── closep.c
+    .   .   ├── ecrific.c
+    .   .   ├── ecrific10.c
+    .   .   ├── f1.c
+    .   .   ├── f2.c
+    .   .   ├── f3.c
+    .   .   ├── f4.c
+    .   .   ├── Sujet-TD8.html
+    .   .   └── titi.txt
+    .   ├── TD9
+    .   .   ├── fop.c
+    .   .   ├── foprw.c
+    .   .   ├── freop.c
+    .   .   ├── pipe1.c
+    .   .   ├── pipe2.c
+    .   .   └── Sujet-TD9.html
+    .   └── TD10
+    .       ├── exec1.c
+    .       ├── exec2.c
+    .       ├── exec3.c
+    .       ├── script.sh
+    .       ├── sortie1.c
+    .       ├── sortie2.c
+    .       └── Sujet-TD10.pdf
     └── Partie-3
-     └...
+        └── TD11
+            ├── Exercice-1
+            ├── Exercice-2
+            ├── Exercice-4
+            ├── Sujet-TD11.pdf
+            ├── tel.txt
+            └── test_file.txt
 ```
 ## :technologist: - Langage utilisé
 - C
