@@ -1,0 +1,2 @@
+setenv NAME VAL
+unsetenv NAME

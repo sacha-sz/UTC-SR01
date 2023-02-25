@@ -1,0 +1,8 @@
+ 2  est un nombre premier           écrit par le processus 3395
+ 3  est un nombre premier           écrit par le processus 3400
+ 5  est un nombre premier           écrit par le processus 3404
+ 7  est un nombre premier           écrit par le processus 3408
+ 11  est un nombre premier           écrit par le processus 3412
+ 13  est un nombre premier           écrit par le processus 3417
+ 17  est un nombre premier           écrit par le processus 3422
+ 19  est un nombre premier           écrit par le processus 3425

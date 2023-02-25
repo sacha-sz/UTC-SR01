@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html data-lt-installed="true" class=" mvobt idc0_344"><head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+<meta name="GENERATOR" content="Dreamweaver III">
+   
+<title>SR01-TD9</title>
+</head><body bgcolor="#FFFFFF"><x-sas-window top="1" bottom="476" left="4" right="766"> 
+<x-sas-remotesave server="www4.utc.fr" user="lo03" dir="public_html/" file="td0.html"> 
+
+
+<table width="800">
+  <tbody><tr>
+  <td width="78">  <p align="center"><img src="sujet_files/logo_utc_new.jpg" width="180" height="60" align="MIDDLE"></p></td>
+  
+<td>  <p align="center"><b><font size="+3"><font color="#006699">SR01 - TD 9 </font></font></b></p>  <p align="center"><b><font size="+3"><font color="#006699">Exécution d'une commande 
+          lancée par le C</font></font></b></p></td>
+  </tr>
+</tbody></table>
+<hr width="800" align="left">
+<p></p>
+
+<p style="font-weight: bold;"><font color="006699">Ex1: Sortie d'un programme</font></p>
+  
+  <p><br>
+créer un programme "<b><font color="#CC6600">sortie1.c</font></b>" qui utilise l'appel
+système <font color="#CC6600">exit() </font>pour
+passer une valeur de statut de terminaison au shell. </p>
+  <p>Cette valeur de sortie sera testée dans un <b>if</b> du
+shell&nbsp;(dans
+un script qui appelle "sortie1.c"). </p>
+  <p>créer un programme "<b>sortie2.c</b>" qui fait un appel
+à la fonction <font color="#CC6600">atexit(void (*fonc))</font> pour provoquer l'exécution de la fonction "<b>fonc</b>" juste
+<br>
+avant la sortie du programme par <font color="#CC6600">exit()</font>.
+Faites un test en faisant sortir le programme par<font color="#CC6600"> exit()</font> ou
+par envoi d'un "<b>control-C</b>".</p>
+
+
+  <hr width="800" align="left">
+<p style="font-weight: bold;"><font color="006699">Ex2: system() et execv()</font></p>
+
+
+  <p>Le but de cette partie est de faire exécuter les deux commandes "
+  <font face="Courier New, Courier, mono">/bin/ls 
+    -la</font>" et "<font face="Courier New, Courier, mono">/bin/ls 
+    *.c</font>" à partir d'un programme en C. <br>
+    Pour chacune de ces 
+    commandes, deux méthodes seront étudiées : utilisation 
+    de la fonction <b><font color="#CC6600">system()</font></b> 
+    et utilisation de la fonction <b><font color="#CC6600">execv()</font></b>.</p>
+<p></p>
+<p style="font-weight: bold;"><font color="006699">A: Exécution avec la fonction <font color="#CC6600">system()</font></font></p>
+
+
+  Écrire un programme "<b><font face="Courier New, Courier, mono">exec1.c</font></b>" 
+    qui exécute successivement avec la fonction 
+    <font color="#CC6600">system()</font> les deux commandes : "<font face="Courier New, Courier, mono">/bin/ls -la </font>" et "<font face="Courier New, Courier, mono">/bin/ls 
+    *.c</font>".
+  <ul>
+    <li> Compilez et exécutez votre programme.</li>
+    <li> Le résultat est-il satisfaisant ?</li>
+  </ul>
+<p style="font-weight: bold;"><font color="006699">B: Exécution avec la fonction <font color="#CC6600">execv()</font></font></p>
+
+
+  Complétez votre programme "
+   <font face="Courier New, Courier, mono"><b>exec2.c</b></font>" 
+    en écrivant une fonction <font face="Courier New, Courier, mono"><b>my_system(char 
+    *path, char **argv)</b></font> exécutant <br>
+la commande passée 
+    en paramètre en utilisant la fonction <font color="#CC6600">execv()</font>. 
+    "<font face="Courier New, Courier, mono">path</font>" représente 
+    le chemin de la commandes <br>
+exécutée 
+    (<font face="Courier New, Courier, mono">"/bin/ls"</font>) 
+    et "<font face="Courier New, Courier, mono">argv</font>" le tableau 
+    terminé par <font face="Courier New, Courier, mono">NULL</font> des 
+    arguments passés à cette commande, le premier argument étant<br> 
+le nom du programme lui-même. "
+    <font face="Courier New, Courier, mono">path</font>" 
+    et "<font face="Courier New, Courier, mono">argv</font>" sont dans 
+    ce cas les arguments à passer à <font color="#CC6600">execv()</font>.<br>
+    Cependant, vous pouvez, si vous le désirez, utiliser toute autre fonction 
+    de la famille des fonctions <font color="#CC6600">exec</font> à la place de la fonction <font color="#CC6600">execv()</font>et<br> 
+passer à votre fonction 
+    <font face="Courier New, Courier, mono"><b>my_system()</b></font> 
+    les paramètres qui vous paraissent alors judicieux.
+    <br>
+ <ul> 
+  <li>Dans votre programme principal, appelez successivement votre fonction 
+  <font face="Courier New, Courier, mono"><b>my_system()</b></font> 
+    avec les paramètres <br>
+    permettant d'exécuter les commandes "
+    <font face="Courier New, Courier, mono">/bin/ls 
+    -la</font>" et "<font face="Courier New, Courier, mono">/bin/ls 
+  *.c</font>".</li>
+  <li> Compilez et exécutez votre programme. </li>
+</ul>
+<p style="font-weight: bold;"><font color="006699">C: Constatations et correction du programme</font></p>
+<ul>
+  <li>Que constatez-vous au sujet de l'exécution de<font color="#CC6600"> execv()</font>    ?</li>
+  <li>Modifiez votre fonction <b><font face="Courier New, Courier, mono">my_system()</font></b>, dans <b><font face="Courier New, Courier, mono"> exec3.c</font></b>, pour contourner le comportement de 
+    <font color="#CC6600">execv()</font> 
+    mis en évidence.<br>
+    <br>
+  </li>
+  <li>Après recompilation, que constatez-vous lors de l'exécution 
+    de "<font face="Courier New, Courier, mono">/bin/ls *.c</font>" 
+    avec <font face="Courier New, Courier, mono"><b>my_system()</b></font> ? Expliquez 
+    la raison du comportement constaté.</li>
+  <li>Quelle commande faudrait-il exécuter pour que le "
+  <font face="Courier New, Courier, mono">/bin/ls 
+    *.c</font>" avec <font face="Courier New, Courier, mono"><b>my_system()</b></font> 
+    s'exécute correctement ? Commentez. <br>
+    Exécutez cette commande 
+    en utilisant <font face="Courier New, Courier, mono"><b>my_system()</b></font>.<br>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+<!--
+<HR WIDTH="100%">
+<b><font size=+1><br>
+<a name="popen"></a> Ex&eacute;cution avec la fonction 
+<a href="http://www4.utc.fr/cgi-bin/man2html?popen(3S)">popen()</a></font></b> 
+<UL>
+  <LI>Cr&eacute;ez un programme &quot;
+   <font face="Courier New, Courier, mono"><b>popen0.c</b></font>&quot; 
+   qui utilise le foncion <font face="Courier New, Courier, mono"><b>popen</b></font>
+   pour ex�cuter une commande <b>"ls"</b> en r�cup�rant le r�sultat du <b>"ls"</b> 
+   et en l'affichant
+   sur "stdout". <font face="Courier New, Courier, mono"><b>&nbsp;&nbsp;Nota : </b></font> un
+   exemple d'utilisation de <font face="Courier New, Courier, mono"><b>popen</b></font>
+   est donn� dans le <font face="Courier New, Courier, mono"><b>"man".</b></font>
+  </li>
+  <LI>Examinez le script Tcl/Tk suivant (et ex�cutez le par : ./lir1.tk)
+<P><center><FONT SIZE="+1"><B><TABLE BORDER=1 WIDTH="70%">
+   <TR><TD BGCOLOR="#FFFF00"><font size=+1>
+         <PRE>
+#!/usr/local/bin/wish -f
+
+label  .mot_lire -text "entrer un mot :"
+entry  .mot_lu -textvariable mot_lu
+button .ok -text "OK" -command b_ok
+
+pack .mot_lire .mot_lu .ok
+
+proc b_ok {} {  puts [.mot_lu get]
+                exit 0 }
+</PRE>
+</font></TD></TR></TABLE>
+</B></FONT></center><p></P>
+  </li>
+  <LI>Cr&eacute;ez un programme &quot;
+   <font face="Courier New, Courier, mono"><b>popen1.c</b></font>&quot; 
+   qui utilise le foncion <font face="Courier New, Courier, mono"><b>popen</b></font>
+   pour ex�cuter un script <font face="Courier New, Courier, mono"><b>"lir1.tk"</b></font>
+   en r�cup�rant le r�sultat tap� dans la fen�tre, et en l'affichant sur "stdout".
+  </li>
+   
+  <LI>Cr&eacute;ez un programme &quot;
+   <font face="Courier New, Courier, mono"><b>popen2.c</b></font>&quot; 
+   qui utilise le foncion <font face="Courier New, Courier, mono"><b>popen</b></font>
+   pour ex�cuter un script <font face="Courier New, Courier, mono"><b>"lir2.tk"</b></font>
+   en r�cup�rant le r�sultat tap� dans la fen�tre, et en l'affichant sur "stdout".
+   Le code de <font face="Courier New, Courier, mono"><b>"lir2.tk"</b></font> est donn�
+   ci-dessous :
+ <P><center><FONT SIZE="+1"><B><TABLE BORDER=1 WIDTH="70%">
+   <TR><TD BGCOLOR="#FFFF00"><font size=+1>
+         <PRE>
+#!/usr/local/bin/wish -f
+
+wm title . [lindex $argv 0]
+
+label  .mot_lire -text [lindex $argv 1]
+entry  .mot_lu -textvariable mot_lu
+button .ok -text "OK" -command b_ok
+
+pack .mot_lire .mot_lu .ok
+
+proc b_ok {} {  puts [.mot_lu get]
+                exit 0 }
+</PRE>
+</font></TD></TR></TABLE>
+</B></FONT></center><p></P>
+	L'ex�cution de lir2.tk par <font face="Courier New, Courier, mono"><b>
+	./lir2.tk Un_titre "entrez le texte :" </b></font> donne :<br><br>
+	<CENTER><IMG SRC="lir2.jpg" ALIGN=bottom></CENTER>
+     </li>
+</ul>-->
+
+<hr width="800" align="left">
+<!--<div align="right"><B><I><FONT COLOR="#333333" size="-1"> Jean-Marc Berenguier -- 
+ Michel Vayssade --  2003</FONT></I></B> </div>-->
+
+
+</x-sas-remotesave></x-sas-window></body></html>

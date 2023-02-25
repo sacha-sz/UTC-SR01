@@ -1,0 +1,19 @@
+# Question 1
+grep :
+  -E : Interpret PATTERNS as extended regular expressions (EREs, see below).
+  -P : Interpret PATTERNS as Perl-compatible regular expressions (PCREs).  This option is experimental when combined with the -z (--null-data) option, and grep  -P  may  warn  of
+              unimplemented features.
+  -l : Suppress normal output; instead print the name of each input file from which output would normally have been printed.  The scanning will stop on the first match.
+
+  -L : Suppress normal output; instead print the name of each input file from which no output would normally have been printed.  The scanning will stop on the first match.
+  -v : Invert the sense of matching, to select non-matching lines.
+  -c : Suppress normal output; instead print a count of matching lines for each input file.  With the -v, --invert-match option (see below), count non-matching lines.
+
+# Question 2
+TEST
+
+# Question 3
+echo "Bonjour, sr01" | grep "[[:punct:]]" | grep "[[:space:]]"
+
+# Question 4
+echo "Bonjour, sr01" | grep -E "[[:punct:]] | [[:space:]]"

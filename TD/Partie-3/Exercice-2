@@ -1,0 +1,11 @@
+# Question 1
+cat tel.txt | grep -E "^06[[:digit:]]{8}"
+
+# Question 2
+cat tel.txt | grep -E "^06[[:digit:]]{8}" -vc
+
+# Question 3
+cat tel.txt | grep -E "^0[6 | 7][[:digit:]]{8}"
+
+# Question 4
+cat tel.txt | grep -E "^0[6 | 7][[:digit:][:punct:]]{8}"

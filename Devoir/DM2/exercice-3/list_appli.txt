@@ -1,0 +1,17 @@
+nombre_applications=3
+name=Power Manager
+path=./power_manager
+nombre_arguments=2
+arguments=
+./mise_en_veille.txt
+4
+
+name=Get Time
+path=./get_time
+nombre_arguments=0
+arguments=
+
+name=Network Manager
+path=./network_manager
+nombre_arguments=0
+arguments=

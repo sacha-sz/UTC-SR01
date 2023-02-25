@@ -1,0 +1,9 @@
+cc -o HELLO EX3.c
+
+objdump -h HELLO
+objdump -s HELLO | more
+objdump -d HELLO | more
+
+Dans la section .rodata
+
+size -A HELLO : permet d'obtenir la taille et les adresses des différentes sections

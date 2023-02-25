@@ -1,0 +1,8 @@
+2  est un nombre premier          PID du processus qui a appelé system() : 6020          PID de son père (qui exécute la boucle for) : 6019          PID du processus qui écrit le message : 6024
+5  est un nombre premier          PID du processus qui a appelé system() : 6022          PID de son père (qui exécute la boucle for) : 6019          PID du processus qui écrit le message : 6027
+3  est un nombre premier          PID du processus qui a appelé system() : 6021          PID de son père (qui exécute la boucle for) : 6019          PID du processus qui écrit le message : 6026
+7  est un nombre premier          PID du processus qui a appelé system() : 6023          PID de son père (qui exécute la boucle for) : 6019          PID du processus qui écrit le message : 6028
+11  est un nombre premier          PID du processus qui a appelé system() : 6025          PID de son père (qui exécute la boucle for) : 6019          PID du processus qui écrit le message : 6029
+19  est un nombre premier          PID du processus qui a appelé system() : 6038          PID de son père (qui exécute la boucle for) : 6035          PID du processus qui écrit le message : 6041
+13  est un nombre premier          PID du processus qui a appelé system() : 6036          PID de son père (qui exécute la boucle for) : 6035          PID du processus qui écrit le message : 6039
+17  est un nombre premier          PID du processus qui a appelé system() : 6037          PID de son père (qui exécute la boucle for) : 6035          PID du processus qui écrit le message : 6040

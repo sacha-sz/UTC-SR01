@@ -1,0 +1,12 @@
+# Question 1
+echo johndoe@gmail.com | sed 's/.*@\(.*\)/domaine=\1/'
+
+# Question 2
+echo johndoe@gmail.com | sed 's/\(.*\)@\(.*\)/login=\1 domaine=\2/'
+
+# Question 3
+echo john.doe@gmail.com | sed 's/\(.*\)\.\(.*\)@\(.*\)/prenom=\1 nom=\2 domaine=\3/'
+
+# Question 4
+echo john.doe@gmail.com | sed 's/\(.*\)\.\(.*\)@\(etu\.*\)/prenom=\1 nom=\2 domaine=\3/'
+echo john.doe@etu.com | sed 's/\(.*\)\.\(.*\)@\(etu\.*\)/prenom=\1 nom=\2 domaine=\3/'

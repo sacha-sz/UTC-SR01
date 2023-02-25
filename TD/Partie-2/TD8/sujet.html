@@ -1,0 +1,231 @@
+<html data-lt-installed="true" class=" gquremfkd idc0_344"><head>
+   <title>SR01-td10</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body bgcolor="#FFFFFF">
+
+
+                      <font face="Arial, Helvetica, sans-serif">
+<table dwcopytype="CopyTableRow" width="800">
+  <tbody><tr>
+  <td width="78">  <p align="center"><img src="sujet_files/logo_utc_new.jpg" width="180" height="60" align="MIDDLE"></p></td>
+  
+<td>  <p align="center"><b><font size="+3"><font color="#006699">SR01 - TD<font face="Arial, Helvetica, sans-serif">10</font></font></font></b></p>
+<p align="center"><b><font size="+3"><font color="#006699">Entrées/Sorties</font></font></b></p></td>
+  </tr>
+</tbody></table>
+</font>
+
+
+<!--<CENTER><B>
+<HR>
+</B>
+<P><B>SR01 - UNIX - TD 8 : Entr&eacute;es/Sorties -
+Table de Descripteurs - Fichiers - Pipes</B></P></CENTER>
+<P><B>-->
+<hr>
+
+<font size="5" color="006699">Rappel de cours: Les E/S bas niveau</font>
+<p></p>
+
+<ul>
+  <li><b><a name="Primitives"></a>
+    Primitives succeptibles d'être utilisées 
+    dans ce TD </b>(non exhaustif):<br>
+<i><font size="4" color="#CC6600">  open() read() write() close() dup() dup2()
+fcntl() flock() lseek() pipe() getdtablesize()</font></i>
+
+  </li>
+  <li><b>Les descripteurs</b> :<br>
+    A chaque canal d'E/S (fichier, /dev/tty, STDIN, STDOUT, ...) est 
+    associé 
+    un descripteur. <b>Chaque process</b> a une table de descripteurs.<br>
+    
+    Les tois premières entrées de la table des descripteurs 
+    correspondent aux descripteurs :<br>
+    
+    <ul>
+      <li>de l'entrée standard (par défaut le clavier) : 
+      Entrée de rang STDIN_FILENO (0) de la table des descripteurs 
+      (Voir "/usr/include/unistd.h") : on parlera par abus de langage du descripteur 0.S
+      </li>
+      <li>de la sortie standard (par défaut l'écran) : 
+        Entrée 
+        de rang STDOUT_FILENO (1) de la table des descripteurs : on parlera du 
+        descripteur 1.</li>
+      <li> de la sortie des messages d'erreur : Entrée de rang 
+      STDERR_FILENO 
+      (2). Elle contient généralement le même descripteur 
+      que l'entrée STDOUT_FILENO.  </li>
+
+	</ul><br>
+  </li>
+  <li>Pour connaître la <b>taille de la table des 
+    descripteurs</b>, 
+    utiliser la fonction <b>getdtablesize()</b>"<br>
+    <br>
+  </li>
+  <li>Un process "fils" <b>hérite</b> de la table 
+    des descripteurs de son process "père" lors d'un <b>fork()</b>, 
+    y compris de son contenu: après le fork, le fils a donc les 
+    mêmes fichiers ouverts que le père. <br>
+    <br>
+  </li>
+  <li><b>Description sommaire des primitives 
+    (fonctions) systèmes</b> :<br>
+    <br>
+    <ul>
+      <li>  <b>dup(fd)</b> 
+        : duplique le descripteur de rang "fd" et affecte la copie dans 
+	la <b>première 
+        entrée libre</b> de la table des descripteurs. Retourne le rang 
+        de cette entrée.<br>
+        <br>
+      </li>
+      <li> <b>close(fd)</b> 
+        : Détruit le descripteur de rang "fd" de la table : 
+	libère 
+        l'entrée. Pour un fichier, le fichier est fermé lors du 
+        "close" du dernier descripteur associé à ce fichier.<br>
+        <br>
+      </li>
+      <li> <b>open(path,flags[,mode])</b> 
+        : Ouvre un fichier et retourne le rang du descripteur 
+	associé à ce fichier.<br>
+        <br>
+      </li>
+      <li> <b>pipe(fd[2])</b> 
+        : Crée un "pipe" et retourne le rang des deux descripteurs 
+	associés 
+        à ce pipe. Sur la plupart des systèmes, ce qui est 
+	écrit 
+        en fd[1] est recupéré en fd[0] 
+	(Read-only) 
+        en mode FIFO (First In, First Out). Ce mécanisme peut 
+	être 
+        utilisé pour échanger des données entre 
+	process.<br>
+        <i>Remarque: Sur le système que vous utilisez, un pipe 
+	est bi-directionnel; 
+        Ce qui est écrit d'"un coté" du pipe 
+	(quelqu'il 
+        soit) est récupéré de l'autre.</i><br>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>
+
+<br>
+</p><hr><!-- ____________________________________________________________ -->
+<br>
+
+<font size="4" color="006699">Exercice1: E/S bas niveau</font>
+<i><font size="4" color="#CC6600"> [ open() read() write() close() ]</font></i>
+ 
+      <br>
+      &gt; <b> cp ~sr01/td/ecrific.c  .</b><br>
+      Examiner le source, le compiler et l'exécuter.<br>
+      
+      Remplacer la lecture de 10 entiers par 10 lectures d'un entier
+      -&gt; <b>ecrific10.c</b><br> <br>
+
+
+<font color="006699"><strong>Exercice2: fork( ) , wait( ) et waitpid( ) </strong></font>
+  <p><font color="006699"><strong>1)</strong></font> créer un programme "<b>f1.c</b>" qui appelle <font color="#CC6600">fork()</font><b> </b>pour créer un process fils. <br>
+On fera écrire au process parent : </p>
+  <ul>
+      <li> ici le parent, mon pid est nnn, le pid de mon fils est nnn</li>
+  </ul>
+  
+ Et au process fils :
+ 
+    <ul>
+      <li> ici le fils, mon pid est nnn, le pid de mon père nnn.</li>
+    </ul>
+ 
+  <p><strong><font color="#006699">2) </font></strong>Créer un programme "<b>f2.c</b>" qui crée deux fils&nbsp;(tous deux fils du même père). On fera écrire à chaque process les mêmes informations que <b>f1.c</b>. </p>
+  <p><strong><font color="#006699">3)</font></strong> Faites <b>cp f1.c f3.c</b> <br>
+    puis, modifiez <b>f3.c</b> en ajoutant dans le père un appel à <a><font color="CC6600">wait()</font></a><b> </b>pour attendre la fin de son fils, et dans le fils un appel à <a><font color="#CC6600">exit()</font></a> en passant à exit <br>
+    un argument (status de fin) qui sera récupéré dans le <a>wait()</a>. </p>
+  <p><strong><font color="#006699">4)</font></strong> Faites <b>cp f2.c f4.c</b> <br>
+    puis, modifiez <b>f4.c </b>en ajoutant dans le père un appel à <a><font color="#CC6600">waitpid()</font></a> pour attendre la fin de <b>l'un de</b> ses fils. On fera autant d'appels à <a>waitpid()</a> qu'il y a de fils.</p>
+
+<p>
+
+<font size="4" color="006699">Exercice3: E/S bas niveau</font>
+<i><font size="4" color="#CC6600"> [pipe(), héritage père-&gt;fils de
+      la table des descripteurs après un  fork()]</font></i>
+      <br>
+      
+      </p><ol>
+         <li>Re-écrire <b>ecrific.c</b>. On ne passe plus par un
+         fichier temporaire mais par un <b>pipe</b> -&gt; <b>pipe1.c</b><br>
+         
+         <br>
+         </li>
+         
+          <li>Ecrire un programme o� un process 
+            <b>fils</b> exécute <b>ls -la</b> (en utilisant la fonction 
+	   <b>execlp()</b>) et  communique le résultat de cette commande par pipe au process <b>père</b> qui exécute la commande 
+	    <b>wc-l </b> (ls -l donne le nomre des lignes) -&gt; <b>pipe2.c</b><br>
+         
+	 <br>
+	 
+         </li>
+      </ol>
+ 
+
+
+<font size="4" color="006699">Exercice4: E/S haut niveau</font>
+<i><font size="4" color="#CC6600"> [ fopen() fread() fwrite() fclose()]</font></i>
+<br>
+Les fonctions open(), read(), write(), close(), ... sont des
+      appels systèmes qui accèdent au noyau du système. Elles utilisent
+      la notion de <b>descripteur</b> de fichier.
+      <br>Il existe une
+      interface d'accès aux fichiers (<b>les flux</b>) qui sont des
+      fonctions de la <b>bibliothèque C</b> : les fonctions <b>fopen(), fread(),
+      fwrite(), fclose(), fflush(),...</b>. Elles utilisent
+      la notion de <b>flux (type FILE *)</b>.<br>
+      Ces fonctions appartenant � la bibliothèque C sont définies dans
+      le standard ANSI C et sont <b>plus portables</b> que les appels
+      systèmes unix.<br>
+      Il est possible d'obtenir le numéro de descripteur associé � un
+      flux comme il est possible d'ouvrir un nouveau flux "autour" 
+      d'un descripteur donné.<br>
+
+
+ <b>cp ~sr01/td/fop.c .</b><br>
+      Examiner le source, le compiler et l'exécuter.
+      <br>
+      Écrire un programme <b>foprw.c</b> qui va lire un fichier <b>fop.in</b>,
+      ajouter <b>"xxx"</b> � la fin de chaque ligne et écrire le résultat dans
+      <b>fop.out</b>.
+      <br>
+      <br>
+      On aura :<pre>      <b>fop.in</b>                   <b>fop.out</b>
+      ligne_1 aaa bbb          ligne_1 aaa bbbxxx
+      ligne_2 dd ee            ligne_2 dd eexxx
+      </pre>
+
+
+<font size="4" color="006699">Exercice5: E/S haut niveau</font>
+<i><font size="4" color="#CC6600"> [ freopen() ]</font></i>
+<br>
+      En utilisant <b>freopen()</b>, écrire un programme <b>freop.c</b>
+      qui va successivement :
+      <ol><li>écrire des lignes sur l'écran avec un printf(),</li>
+          <li>rediriger stdout,</li>
+          <li>écrire les lignes suivantes �crites avec des printf()
+	  dans le fichier <b>freop.log</b></li>
+      </ol>
+      
+   
+   
+
+
+
+
+
+</body></html>
