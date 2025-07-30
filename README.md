@@ -8,7 +8,13 @@ Les programmes sont écrits en **C**, et sont organisés par **TD** et **devoir*
 
 <br/>
 
-## 📌 Contenu des TD
+## 📌 Contenu des TD & Devoirs
+
+| **Devoir**  | **Thème principal**                                                                                 |
+|--------|----------------------------------------------------------------------------------------------------------|
+| DM1 | Manipulation de structures en C, recherche par spécialité, tri par distance, interface en ligne de commande |
+| DM2 | Programmation système en C : création d’un arbre de processus avec fork(), affichage des PID/PPID           |
+
 
 | **TD**  | **Thème principal**                                                             |
 |--------|----------------------------------------------------------------------------------|
@@ -25,10 +31,6 @@ Les programmes sont écrits en **C**, et sont organisés par **TD** et **devoir*
 | TD11   | Administration système : utilisateurs, groupes, droits, sécurité, fichiers       |
 
 
-| **Devoir**  | **Thème principal**                                                                                 |
-|--------|----------------------------------------------------------------------------------------------------------|
-| DM1 | Manipulation de structures en C, recherche par spécialité, tri par distance, interface en ligne de commande |
-| DM2 | Programmation système en C : création d’un arbre de processus avec fork(), affichage des PID/PPID           |
 
 
 <br/>
